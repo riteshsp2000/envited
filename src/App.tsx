@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable max-len */
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App() {
+const LandingPage = lazy(() => import( /* webpackPrefetch: true */ 'pages/Landing'));
+const EventPage = lazy(() => import( /* webpackPrefetch: true */ 'pages/EventPage'));
+const CreateEvent = lazy(() => import( /* webpackPrefetch: true */ 'pages/CreateEvent'));
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<p>Loading</p>}>
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<LandingPage />}/>
+            <Route path="/create" element={<CreateEvent />} />
+            <Route path="/event" element={<EventPage />}/>
+          </Routes>
+      </BrowserRouter>
+    </Suspense>
   );
-}
+};
 
 export default App;
