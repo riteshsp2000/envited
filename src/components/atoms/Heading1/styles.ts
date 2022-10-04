@@ -5,6 +5,10 @@ export const styles = {
     fontSize: '2.25rem',
     lineHeight: 1,
     align: 'center',
-    color: 'primary.dark'
+    color: 'primary.dark',
+
+    '@media screen and (min-width: 600px)': {
+      fontSize: '4rem'
+    }
   }
 };

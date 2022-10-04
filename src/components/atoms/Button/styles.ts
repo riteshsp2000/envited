@@ -9,6 +9,10 @@ export const styles = {
     textTransform: 'none',
 
     backgroundColor: leftColor,
-    backgroundImage: `linear-gradient(90deg, ${leftColor} 45%, ${rightColor} 100%)`
+    backgroundImage: `linear-gradient(90deg, ${leftColor} 45%, ${rightColor} 100%)`,
+
+    '@media screen and (min-width: 600px)': {
+      fontSize: '1.25rem'
+    }
   })
 };

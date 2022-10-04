@@ -18,6 +18,10 @@ export const styles = {
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     MozBackgroundClip: 'text',
-    MozTextFillColor: 'transparent'
+    MozTextFillColor: 'transparent',
+
+    '@media screen and (min-width: 600px)': {
+      fontSize: '4rem'
+    }
   })
 };
